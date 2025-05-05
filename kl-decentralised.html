@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KL Decentralised Listings - Your Real Estate Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+  <!-- Header -->
+  <header class="bg-green-700 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold">KL Decentralised Listings</h1>
+      <p class="mt-3 text-lg">Strategic Commercial Properties in Kuala Lumpur’s Decentralised Hubs</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-green-600 text-white py-4">
+    <div class="container mx-auto px-4 flex justify-center space-x-6">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="kl-city.html" class="hover:underline">KL City</a>
+      <a href="kl-fringe.html" class="hover:underline">KL Fringe</a>
+      <a href="kl-decentralised.html" class="underline">KL Decentralised</a>
+    </div>
+  </nav>
+
+  <!-- Listings Section -->
+  <section id="listings" class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-semibold text-center mb-8">KL Decentralised Properties</h2>
+      <div id="listing-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-semibold mb-6">Contact Me</h2>
+      <p class="text-gray-600 mb-4">Have questions or want to view a property? Reach out today!</p>
+      <p class="text-gray-600">Email: kingwei.lau@ntl.my</p>
+      <p class="text-gray-600">Phone: +601120765789</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>© 2025 Your Real Estate Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Property listings data
+    const properties = [
+      {
+        location: "Surian Tower, Mutiara Damansara",
+        rmPsf: "5.50",
+        status: "MSC Status",
+        image: "https://via.placeholder.com/400x300?text=Surian+Tower"
+      },
+      {
+        location: "Phileo Damansara, Petaling Jaya",
+        rmPsf: "5.20",
+        status: "Green Building (GBI Certified)",
+        image: "https://via.placeholder.com/400x300?text=Phileo+Damansara"
+      },
+      {
+        location: "MCMC Tower 2, Cyberjaya",
+        rmPsf: "4.80",
+        status: "MSC Status",
+        image: "https://via.placeholder.com/400x300?text=MCMC+Tower+2"
+      },
+      {
+        location: "CP Tower, Petaling Jaya",
+        rmPsf: "5.00",
+        status: "MSC Status",
+        image: "https://via.placeholder.com/400x300?text=CP+Tower"
+      },
+      {
+        location: "Menara Star, Petaling Jaya",
+        rmPsf: "5.10",
+        status: "Green Building (LEED Silver)",
+        image: "https://via.placeholder.com/400x300?text=Menara+Star"
+      },
+      {
+        location: "Bangunan KWSP, Damansara Fairway",
+        rmPsf: "5.30",
+        status: "Green Building (GBI Certified)",
+        image: "https://via.placeholder.com/400x300?text=Bangunan+KWSP"
+      },
+      {
+        location: "UOA Corporate Tower, Subang Jaya",
+        rmPsf: "5.40",
+        status: "MSC Status",
+        image: "https://via.placeholder.com/400x300?text=UOA+Corporate+Tower"
+      },
+      {
+        location: "Menara Telekom, Taman Desa",
+        rmPsf: "4.90",
+        status: "MSC Status",
+        image: "https://via.placeholder.com/400x300?text=Menara+Telekom"
+      },
+      {
+        location: "Axis Business Park, Petaling Jaya",
+        rmPsf: "5.60",
+        status: "MSC Status",
+        image: "https://via.placeholder.com/400x300?text=Axis+Business+Park"
+      }
+    ];
+
+    // Function to display listings
+    function displayListings() {
+      const container = document.getElementById('listing-container');
+      properties.forEach(property => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+        card.innerHTML = `
+          <img src="${property.image}" alt="${property.location}" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-gray-800">${property.location}</h3>
+            <p class="text-gray-600 mt-2">RM ${property.rmPsf} psf</p>
+            <p class="text-gray-600 mt-1">${property.status}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Display listings on page load
+    displayListings();
+  </script>
+</body>
+</html>
